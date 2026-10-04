@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Fundamentals of Computing</title>
+    <style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: white;
+    color: #222;
+}
+
+/* subtle fixed background pattern */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #173d2b, #2f6b3f);
+    color: white;
+    text-align: center;
+    padding: 32px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 17px;
+}
+
+/* MAIN LAYOUT */
+.main-layout {
+    display: flex;
+    align-items: stretch;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px 25px 45px;
+    gap: 35px;
+}
+
+/* LEFT LINK BOXES */
+.sidebar {
+    width: 290px;
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.nav-card {
+    display: block;
+    width: 100%;
+    min-height: 78px;
+    margin-bottom: 18px;
+    padding: 18px 15px;
+    background: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #222;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.16);
+    transition: 0.2s;
+}
+
+.nav-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0,0,0,0.22);
+}
+
+.nav-card h3 {
+    margin: 0;
+    color: #173d2b;
+    font-size: 21px;
+}
+
+.nav-card p {
+    margin: 5px 0 0;
+    color: #666;
+    font-size: 13px;
+}
+
+/* RIGHT CONTENT BOX */
+.content {
+    flex: 1;
+    min-width: 0;
+    background: rgba(255,255,255,0.97);
+    border-radius: 14px;
+    padding: 35px 45px 45px;
+    min-height: 600px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.16);
+}
+
+.content h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #173d2b;
+    font-size: 32px;
+}
+
+.content h3 {
+    color: #2f6b3f;
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.content ul {
+    line-height: 1.9;
+}
+
+.info-box {
+    background: #eef3e9;
+    border-left: 5px solid #2f6b3f;
+    border-radius: 7px;
+    padding: 18px 20px;
+    margin: 20px 0;
+}
+
+.reference-image {
+    display: block;
+    width: 85%;
+    max-width: 850px;
+    margin: 10px auto 25px;
+    border: 2px solid #173d2b;
+    border-radius: 8px;
+}
+
+.text-link {
+    color: #1b5e20;
+    font-size: 17px;
+}
+
+.project-link {
+    display: block;
+    margin: 11px 0;
+    color: #1b5e20;
+    font-size: 17px;
+}
+
+.placeholder {
+    margin: 20px 0;
+    padding: 22px;
+    border: 2px dashed #6d8c70;
+    background: #f4f7f2;
+    border-radius: 8px;
+    color: #58705b;
+    text-align: center;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 10px 18px;
+    background: #2f6b3f;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+}
+
+.back-home:hover {
+    background: #173d2b;
+}
+
+/* HOME PAGE */
+.welcome {
+    text-align: center;
+    padding: 5px 0 10px;
+}
+
+.welcome h2 {
+    color: #2f6b3f;
+    font-size: 28px;
+}
+
+.welcome p {
+    color: #2f6b3f;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.dashboard {
+    background: white;
+    min-height: 470px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.dashboard h2 {
+    color: #173d2b;
+}
+
+/* FOOTER */
+footer {
+    clear: both;
+    background: #173d2b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media (max-width: 850px) {
+    .main-layout {
+        flex-direction: column;
+        padding: 20px 15px 35px;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .nav-card {
+        max-width: 500px;
+        margin: 0 auto 15px;
+    }
+
+    .content {
+        padding: 25px 20px 35px;
+    }
+
+    .reference-image {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Fundamentals of Computing</h1>
+    <p>Student Portfolio &amp; Personal Website</p>
+</header>
+
+<div class="main-layout">
+    
+    <aside class="sidebar">
+        <a href="course.html" class="nav-card">
+            <h3>Course</h3>
+            <p>Fundamentals of Computing</p>
+        </a>
+
+        <a href="project.html" class="nav-card">
+            <h3>Project</h3>
+            <p>Projects and converters</p>
+        </a>
+
+        <a href="concepts.html" class="nav-card">
+            <h3>Concepts</h3>
+            <p>Presentations and recordings</p>
+        </a>
+
+        <a href="databases.html" class="nav-card">
+            <h3>Databases</h3>
+            <p>MySQL and database work</p>
+        </a>
+
+        <a href="documentation.html" class="nav-card">
+            <h3>Documentation</h3>
+            <p>Reports and documents</p>
+        </a>
+
+        <a href="dev-team.html" class="nav-card">
+            <h3>Dev Team</h3>
+            <p>About the development team</p>
+        </a>
+    </aside>
+
+
+    <main class="content">
+        
+<h2>Documentation</h2>
+
+    <img src="Documentation.png" alt="Documentation" style="width:700px;heig3ht:00px;">
+</a>
+
+        <a href="index.html" class="back-home">← Back to Home</a>
+    </main>
+</div>
+
+<footer>
+    <p>@ Powered by UB</p>
+</footer>
+
+</body>
+</html>
