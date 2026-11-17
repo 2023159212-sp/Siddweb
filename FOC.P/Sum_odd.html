@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <h2>Sum of Odd Numbers</h2>
+
+  <p>Enter an upper limit number:</p>
+
+  <label for="limit">Upper Limit:</label>
+  <input type="number" id="limit" aria-label="Upper limit number">
+
+  <br><br>
+
+  <button onclick="sumOddsFunctional()">Calculate</button>
+
+  <h3>Result</h3>
+  <h2 id="result"></h2>
+
+<script>
+function sumOddsFunctional() {
+    let max = +document.getElementById('limit').value;
+    let numbers = Array.from({ length: max }, (v, i) => i + 1);
+    let sum = numbers.filter(n => n % 2 !== 0).reduce((total, n) => total + n, 0);
+    document.getElementById('result').textContent = sum;
+}
+</script>
+
+</body>
+</html>

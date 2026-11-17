@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.row {
+    display: flex;
+    min-height: 500px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.column.side {
+    width: 230px;
+    flex-shrink: 0;
+    background: #ffffff;
+    padding: 25px 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    max-height: 480px;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.column.side:hover {
+    overflow-y: auto;
+}
+
+.column.side strong {
+    display: block;
+    font-size: 20px;
+    color: #1e3c72;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2a5298;
+}
+
+.column.side a {
+    display: block;
+    text-decoration: none;
+    color: #444;
+    background: #f4f7fb;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.column.side a:hover {
+    background: #2a5298;
+    color: white;
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px rgba(42, 82, 152, 0.3);
+}
+
+.column.middle {
+    flex: 1;
+    min-width: 0;
+}
+
+.column.middle img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 700px) {
+    .row {
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    .column.side {
+        width: 100%;
+        max-height: none;
+        overflow-y: visible;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .column.side a {
+        text-align: center;
+    }
+}
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sum of Even Numbers</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+  <p>Enter an upper limit number:</p>
+
+  <input type="number" id="limit" aria-label="Upper limit number">
+  <button onclick="sumEvens()">Calculate</button>
+ 
+  <p>The sum of all even numbers up to that limit is:</p>
+  <h2 id="result"></h2>
+
+  <script>
+    function sumEvens() {
+      let max = +document.getElementById('limit').value;
+      let sum = 0;
+      
+      for (let i = 1; i <= max; i++) {
+        if (i % 2 === 0) {
+          sum = sum + i;
+        }
+      }
+      
+      let resultElement = document.getElementById('result');
+      resultElement.textContent = sum;
+    }
+  </script>
+
+</body>
+</html>

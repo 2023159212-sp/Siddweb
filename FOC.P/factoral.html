@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <title>Factoral</title>
+</head>
+<body>
+
+<p> Enter a number: </p>
+
+  <input type="number" id="num1">
+  <button onclick="sum()">=</button>
+ 
+<p>The factorial of all the numbers : </p>
+
+  <h2 id="result"></h2>
+
+	<a href ="project.html"> Home</a>
+
+  <script>
+    function sum(){
+      let n1 = +num1.value;
+		let factoral = n1;
+		let i = n1;
+		
+		if (n1 == 0){
+			factoral = 1;
+		}
+		
+	  while (i > 1){	
+		factoral = factoral * (i - 1);
+		i--;
+		
+	  }
+		let resultElement = document.getElementById('result');
+		resultElement.textContent = factoral;
+     
+    }
+  </script>
+
+</body>
+</html>
